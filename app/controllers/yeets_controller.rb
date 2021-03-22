@@ -3,7 +3,8 @@ class YeetsController < ApplicationController
 
   # GET /yeets or /yeets.json
   def index
-    @yeets = Yeet.all
+    @yeets = Yeet.all.order("created_at DESC")
+    @yeet = Yeet.new
   end
 
   # GET /yeets/1 or /yeets/1.json

@@ -1,27 +1,9 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Yeets</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Yeet</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @yeets.each do |yeet| %>
-      <tr>
-        <td><%= yeet.yeet %></td>
-        <td><%= link_to 'Show', yeet %></td>
-        <td><%= link_to 'Edit', edit_yeet_path(yeet) %></td>
-        <td><%= link_to 'Destroy', yeet, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Yeet', new_yeet_path %>
+<section class="section">
+  <div class="container">
+    <div class="columns">
+      <%= render 'trends' %>
+      <%= render 'feed' %>
+      <%= render 'who-to-follow' %>
+    </div>
+  </div>
+</section>

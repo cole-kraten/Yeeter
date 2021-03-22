@@ -1,22 +1,9 @@
-<%= form_with(model: yeet) do |form| %>
-  <% if yeet.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(yeet.errors.count, "error") %> prohibited this yeet from being saved:</h2>
-
-      <ul>
-        <% yeet.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= form.label :yeet %>
-    <%= form.text_area :yeet %>
+<%= simple_form_for(@yeet) do | f | %>
+<%= f.error_notification %>
+<div class="field">
+  <div class="control">
+    <%= f.input :yeet, label: "Compose your Yeet:", input_html:{class: "textarea"}, wrapper: false, label_html:{class:"label"}, placeholder:"Ready, set, YEET!" %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+</div>
+<%= f.button :submit, class:"button is-info" %>
 <% end %>
