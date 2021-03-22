@@ -1,0 +1,2 @@
+class Yeet < ApplicationRecord
+end
